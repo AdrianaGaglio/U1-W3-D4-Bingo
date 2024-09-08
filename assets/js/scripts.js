@@ -4,8 +4,7 @@ const array1 = [];
 const array2 = [];
 const array3 = [];
 
-// creo il tabellone con 90 celle numerate
-
+// funzione per generare tabellone e cartelline utente
 const board = (num, scope) => {
   const mainBoard = document.getElementById(scope);
   if (scope === "board") {
@@ -21,15 +20,16 @@ const board = (num, scope) => {
   } else if (scope === "user") {
     const userSheet = document.createElement("div");
     userSheet.className = "user-sheet";
+    const newNumbers = numbers.slice(0);
     for (let j = 0; j < num; j++) {
+      const randomIndex = Math.floor(Math.random() * newNumbers.length);
       const boardNumber = document.createElement("div");
       boardNumber.className = "board-number";
-      const randomIndex = Math.floor(Math.random() * numbers.length);
-      const newNumbers = numbers.slice();
       boardNumber.innerHTML = `<span>${newNumbers[randomIndex]}</span>`;
       newNumbers.splice(randomIndex, 1);
       userSheet.appendChild(boardNumber);
     }
+
     mainBoard.appendChild(userSheet);
   }
 };

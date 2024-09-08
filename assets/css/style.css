@@ -1,41 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto", sans-serif;
+  background-color: #f8f7ff;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+header,
 main {
   text-align: center;
 }
 
+header {
+  padding-block: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
 #board {
-  width: 60%;
+  width: 600px;
   margin-inline: auto;
-  margin-block: 3.5rem;
+  margin-block: 1rem;
+  padding-block: 1rem;
+  background-color: #ffeedd;
 }
 
 .board-number {
-  width: 10%;
   display: inline-block;
-  padding-block: 1rem;
+  vertical-align: middle;
+  margin: 0.2rem;
+  padding-block: 0.5rem;
+  width: 50px;
+  border-radius: 50%;
 }
 
 button {
-  margin-block: 1rem;
+  margin-top: 1rem;
+  background-color: #9381ff;
 }
 
 #user {
   text-align: center;
-  margin-top: 3.5rem;
+  padding-block: 1rem;
 }
 
 .user-sheet {
-  width: 25%;
+  width: 350px;
   display: inline-block;
-  margin-inline: 2rem;
-  margin-block: 1rem;
+  margin-inline: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #b8b8ff72;
+  padding-block: 0.5rem;
 }
 
 .user-sheet .board-number {
-  width: 12.5%;
+  width: 35px;
+  padding-block: 0.5rem;
+  font-size: 0.8rem;
 }
 
-.extracted {
-  background-color: red;
+#board .extracted {
+  background-color: #ffd8be;
+}
+
+.user-sheet .extracted {
+  background-color: #9381ff;
+  color: white;
 }
 
 #extraction {
