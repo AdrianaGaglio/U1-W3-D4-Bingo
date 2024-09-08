@@ -126,3 +126,5 @@ chooseNumOfSheet.onsubmit = (event) => {
   document.querySelector("#extraction").style.display = "block";
   document.querySelector("form").style.display = "none";
 };
+
+// note - quick & dirty version - codice da ottimizzare
