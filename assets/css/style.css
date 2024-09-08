@@ -1,0 +1,44 @@
+main {
+  text-align: center;
+}
+
+#board {
+  width: 60%;
+  margin-inline: auto;
+  margin-block: 3.5rem;
+}
+
+.board-number {
+  width: 10%;
+  display: inline-block;
+  padding-block: 1rem;
+}
+
+button {
+  margin-block: 1rem;
+}
+
+#user {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.user-sheet {
+  width: 25%;
+  display: inline-block;
+  margin-inline: 2rem;
+  margin-block: 1rem;
+}
+
+.user-sheet .board-number {
+  width: 12.5%;
+}
+
+.extracted {
+  background-color: red;
+}
+
+#extraction {
+  display: none;
+  margin-inline: auto;
+}
