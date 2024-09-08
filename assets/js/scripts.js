@@ -44,6 +44,21 @@ const extractedNumber = () => {
   boardNumbers.forEach((num) => {
     if (parseInt(num.innerText) === extracted) {
       num.classList.add("extracted");
+      if (document.querySelector(".sheet-1")) {
+        if (array1.indexOf(extracted.toString()) !== -1) {
+          array1.splice(array1.indexOf(extracted.toString()), 1);
+        }
+      }
+      if (document.querySelector(".sheet-2")) {
+        if (array2.indexOf(extracted.toString()) !== -1) {
+          array2.splice(array2.indexOf(extracted.toString()), 1);
+        }
+      }
+      if (document.querySelector(".sheet-3")) {
+        if (array3.indexOf(extracted.toString()) !== -1) {
+          array3.splice(array3.indexOf(extracted.toString()), 1);
+        }
+      }
     }
   });
   // faccio in modo che i numeri già estratti non possano più essere estratti
@@ -58,6 +73,27 @@ const extractedNumber = () => {
 const randomNumBtn = document.getElementById("extraction");
 randomNumBtn.onclick = () => {
   extractedNumber();
+  if (array1.length < 1) {
+    alert("Hai vinto!!!");
+    document.querySelector(".sheet-1").style.border = "2px solid black";
+    setTimeout(function () {
+      location.reload();
+    }, 1500);
+  }
+  if (document.querySelector(".sheet-2") && array2.length < 1) {
+    alert("Hai vinto!!!");
+    document.querySelector(".sheet-2").style.border = "2px solid black";
+    setTimeout(function () {
+      location.reload();
+    }, 1500);
+  }
+  if (document.querySelector(".sheet-3") && array3.length < 1) {
+    alert("Hai vinto!!!");
+    document.querySelector(".sheet-3").style.border = "2px solid black";
+    setTimeout(function () {
+      location.reload();
+    }, 1500);
+  }
 };
 
 // genero il tabellone al caricamento
@@ -76,14 +112,17 @@ chooseNumOfSheet.onsubmit = (event) => {
   }
   const numOfSheets = Array.from(document.querySelectorAll(".user-sheet"));
   for (let i = 0; i < numOfSheets.length; i++) {
-    numOfSheets[i].id = i + 1;
-    if (document.getElementById("3")) {
-      for (let j = 0; j < 24; j++) {}
-    }
+    numOfSheets[i].classList.add("sheet-" + eval(i + 1));
+  }
+  if (document.querySelector(".sheet-1")) {
+    document.querySelectorAll(".sheet-1 div span").forEach((num) => array1.push(num.innerText));
+  }
+  if (document.querySelector(".sheet-2")) {
+    document.querySelectorAll(".sheet-2 div span").forEach((num) => array2.push(num.innerText));
+  }
+  if (document.querySelector(".sheet-3")) {
+    document.querySelectorAll(".sheet-3 div span").forEach((num) => array3.push(num.innerText));
   }
   document.querySelector("#extraction").style.display = "block";
   document.querySelector("form").style.display = "none";
 };
-
-// --- NOTE ---
-// Aggiungere controllo su tabellina vincente

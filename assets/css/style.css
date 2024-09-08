@@ -49,6 +49,10 @@ h1 {
 button {
   margin-top: 1rem;
   background-color: #9381ff;
+  border: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  color: white;
 }
 
 #user {
@@ -83,4 +87,22 @@ button {
 #extraction {
   display: none;
   margin-inline: auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input {
+  display: block;
+  width: 100px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+form span {
+  font-size: 0.6rem;
+  display: block;
+  margin-top: 0.2rem;
 }
